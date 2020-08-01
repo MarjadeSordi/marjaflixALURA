@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoIframeResponsive from './components/VideoIframeResponsive';
 import { BannerMainContainer, ContentAreaContainer, WatchButton } from './styles';
+import queroserdev from '../../assets/img/queroserdev.png'
 
 function getYouTubeId(youtubeURL) {
   return youtubeURL
@@ -16,10 +17,10 @@ export default function BannerMain({
   url,
 }) {
   const youTubeID = getYouTubeId(url);
-  const bgUrl = `C:\Users\marja\Desktop\marjaflix\src\assets\img\queroserdev.png`;
+  const Marja= <img src={queroserdev} alt='DEV'/>;
 
   return (
-    <BannerMainContainer backgroundImage={bgUrl}>
+    <BannerMainContainer backgroundImage={Marja}>
       <ContentAreaContainer>
         <ContentAreaContainer.Item>
           <ContentAreaContainer.Title>
