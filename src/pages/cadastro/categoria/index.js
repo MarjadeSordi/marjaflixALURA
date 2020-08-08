@@ -31,21 +31,19 @@ function CadastroCategoria() {
   }
 
   useEffect(() => {
-    if(window.location.href.includes('localhost')) {
-      const URL = 'http://localhost:8080/categorias'; 
-      fetch(URL)
-       .then(async (respostaDoServer) =>{
-        if(respostaDoServer.ok) {
-          const resposta = await respostaDoServer.json();
-          setCategorias(resposta);
-          return; 
-        }
-        throw new Error('Não foi possível pegar os dados');
-       })
-    }    
-  }, []);
+    const URL_TOP =  window.location.href.includes('localhost')
+    ? 'http//localhost:8080/categoria'
+    : 'https://marjaflix.herokuapp.com/categoria';
+      fetch(URL_TOP)
+       .then(async (respostaDoServidor) => {
+          const resposta = await respostaDoServidor.json();
+          setCategorias([
+          ...resposta, 
+          ]);
+        });
 
   return (
+    
     <PageDefault>
       <h1>
         {' '}
@@ -90,26 +88,31 @@ function CadastroCategoria() {
         <Button>
           Cadastrar
         </Button>
-      </form>7
+      </form>
 
-      {categorias.lenght ===0 && (<div>
-        Loading....
-      </div>)}
+  {categorias.lenght === 0 && (
+  <div>
+    {/*Carregando*/}
+    Loading....
+    </div>
+  )}
 
-      <ul>
-        {categorias.map((categoria) => (
-          <li key={`${categoria.nome}`}>
-            {categoria.nome}
-          </li>
-        ))}
+  <ul>
+  {categorias.map((categoria) => (
+  <li key={`${categoria.nome}`}>
+  {categoria.nome}
+  </li>
 
-      </ul>
+
+  ))} 
+  </ul> 
 
       <Link to="/">
         Ir para home
       </Link>
-    </PageDefault>
-  );
-} 
+
+      </PageDefault> 
+  )
+} ) }
 
 export default CadastroCategoria;
