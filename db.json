@@ -1,0 +1,10 @@
+{
+    "categorias": [{
+        "id": 1,
+        "nome": "Dev Front End",
+        "descrição": "Categoria TOP",
+        "cor": "black"
+
+    }]
+
+}
