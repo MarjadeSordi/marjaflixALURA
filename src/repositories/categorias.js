@@ -1,9 +1,9 @@
 import config from '../config';
 
-const URL_CATEGORIAS = `${config.URL_BACKEND_TOP}/categorias?_embed=videos`;
+const URL_CATEGORIES = `${config.URL_BACKEND_TOP}/categorias`;
 
 function getAll() {
-  return fetch(`${URL_CATEGORIAS}`)
+  return fetch(`${URL_CATEGORIES}`)
   .then(async (respostaDoServidor) => {
 
     if (respostaDoServidor.ok) {
@@ -16,7 +16,7 @@ function getAll() {
 }
 
 function getAllWithVideos() {
-  return fetch(`${URL_CATEGORIAS}?_embed-videos`)
+  return fetch(`${URL_CATEGORIES}?_embed=videos`)
     .then(async (respostaDoServidor) => {
   
       if (respostaDoServidor.ok) {

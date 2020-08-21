@@ -15,15 +15,14 @@
     "react-slick": "^0.27.1",
     "styled-components": "^5.1.1"
   },
-    "scripts": {
-      "server": "node ./server.js",
-      "dev": "concurrently \"react-scripts start\" \"npm run server\"",
-      "start": "npm run server",
-      "build": "react-scripts build",
-      "test": "react-scripts test",
-      "eject": "react-scripts eject"
+  "scripts": {
+    "server": "node ./server.js",
+    "dev": "concurrently \"react-scripts start\" \"npm run server\"",
+    "start": "npm run server",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  
   "browserslist": {
     "production": [
       ">0.2%",
